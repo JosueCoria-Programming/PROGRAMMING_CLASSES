@@ -1,0 +1,36 @@
+# C++ y CLion .gitignore (con subcarpetas)
+
+# Ignorar carpetas .idea/ y cmake-build-* en cualquier subcarpeta
+**/.idea/
+**/cmake-build-*/
+**/cmake-build-debug/
+**/cmake-build-release/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/Makefile
+**/compile_commands.json
+**/Testing/
+**/CTestTestfile.cmake
+**/_install/
+**/_build/
+**/_builds/
+**/*.cmake
+**/*.o
+**/*.obj
+**/*.exe
+**/*.out
+**/*.a
+**/*.so
+**/*.dll
+**/*.dSYM/
+**/*.log
+
+# Archivos del sistema
+**/.DS_Store
+**/Thumbs.db
+
+# Archivos personales o de entorno
+**/*.swp
+**/*.user
+**/*.bak
+**/*.tmp
