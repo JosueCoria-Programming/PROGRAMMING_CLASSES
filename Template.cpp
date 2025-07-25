@@ -1,7 +1,5 @@
 /*
-* NOMBRE: 
-* MATERIA:
-* DESCRIPCIÓN GENERAL DEL EJERCICIO, POR EJEMPLO:
+* DESCRIPCIÓN GENERAL DEL CÓDIGO, POR EJEMPLO:
 * Práctica contar vocales de un puntero
 */
 
@@ -27,6 +25,9 @@ int main()
     /* ------------------------- VARIABLES LOCALES -------------------------  */
 
     /* ---------------------------------------------------------------------  */
+
+    
+    /* ------------------------- CÓDIGO -------------------------  */
 
 }
 
