@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 4.0)
+project(PROGRAMMING_CLASSES)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(PROGRAMMING_CLASSES
+        INTRODUCCION_PROGRAMACION/CMakeLists.txt
+        INTRODUCCION_PROGRAMACION/main.cpp
+)
