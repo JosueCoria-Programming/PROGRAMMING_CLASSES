@@ -21,7 +21,6 @@ using namespace std;
 
 int main()
 {
-    int valor = 10;
 
     /* ------------------------- VARIABLES LOCALES -------------------------  */
 
