@@ -1,12 +1,8 @@
 # TEMARIO — INTRODUCCIÓN A LA PROGRAMACIÓN (C++)
 **Institución:**   
 **Profesor:** Josue Coria  
-**Duración:** 4 meses  
+**Duración:**
 **Lenguaje:** C++ (Consola)
-
-> Este temario está construido **únicamente** a partir de la *Guía del Alumno*.  
-> No se incluyen temas adicionales ni se adelantan conceptos.  
-> Todos los ejercicios, desafíos y evaluaciones se orientan a **sistemas concretos de videojuegos en consola**.
 
 ---
 
