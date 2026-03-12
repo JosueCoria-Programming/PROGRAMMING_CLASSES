@@ -1,364 +1,310 @@
-# 🧠 GUÍA DE BUENAS PRÁCTICAS — INTRODUCCIÓN A LA PROGRAMACIÓN (C++)
-
-**Profesor:** Josue Coria  
-**Institución:** UNITEC
-
-> Objetivo: que tu programa no solo funcione, sino que sea **entendible, mantenible y defendible**.  
-> Un código legible se depura más rápido y se mejora sin romperlo.
+# GUÍA DE BUENAS PRÁCTICAS
+## Programación estructurada avanzada en C++
 
 ---
 
-## 1) Programar en inglés
+# 1. Nombres claros y consistentes
 
-### Por qué existe esta regla
-El inglés es el idioma “default” del código en la industria: librerías, errores, documentación, motores, APIs.
+## Por qué existe esta regla
 
-### Trasfondo
-En equipos mixtos y repos públicos, el inglés reduce fricción y hace tu código portable.
+Los programas se leen muchas más veces de las que se escriben.
+Un nombre mal elegido obliga al lector a descifrar qué hace el código.
 
-✅ **Esperado (código en inglés)**
-```cpp
-int playerHP = 100;
-int damage = 20;
-int hpAfterHit = playerHP - damage;
-```
-
-❌ **Evitar (código en español)**
-```cpp
-int vidaJugador = 100;
-int dano = 20;
-int vidaDespues = vidaJugador - dano;
-```
-
-> **Excepción práctica:** comentarios, README e issues pueden ir en español según la empresa/cliente (ver regla 2).
+Los nombres claros reducen errores y facilitan el mantenimiento.
 
 ---
 
-## 2) Documentación y GitHub: idioma según la empresa
+## Regla
 
-### Por qué
-El repo es comunicación. Algunas empresas prefieren español para operación local; otras, inglés.
+- Variables y funciones deben tener **nombres descriptivos**
+- Usar **inglés**
+- Mantener una convención consistente
 
-### Trasfondo
-El “mejor idioma” es el que maximiza el entendimiento del equipo real.
+Ejemplo recomendado:
 
-✅ **Esperado**
-- Código (identificadores): **inglés siempre**
-- README / documentación: **español o inglés** según contexto
-- Commits: consistentes (pueden ser ES si el equipo lo usa)
+player_health
+enemy_count
+calculate_damage()
 
 ---
 
-## 3) Convenciones de nombres: snake_case, PascalCase, camelCase
+## Ejemplo incorrecto
 
-### Por qué
-La consistencia evita confusión y hace el proyecto más “escanneable”.
 
-### Trasfondo
-En proyectos reales, las convenciones ayudan a identificar **qué** es algo solo por su forma.
+int a;
+int x;
+void f();
 
-✅ **Estándar del curso**
-- **PascalCase**: tipos (structs, clases, enums)
-- **camelCase**: variables y funciones
-- **SNAKE_CASE**: constantes globales (y macros si se usan)
 
-✅ **Ejemplo**
-```cpp
-struct PlayerStats { 
-    int hp; 
-    int coins; 
-};
+---
 
-int calculateDamage(int baseDamage, int strength) { 
-    return baseDamage + strength; 
+## Ejemplo correcto
+
+
+int player_health;
+int enemy_count;
+
+void calculate_damage();
+
+
+---
+
+# 2. Una función debe tener una sola responsabilidad
+
+## Por qué existe esta regla
+
+Las funciones demasiado grandes se vuelven difíciles de entender, probar y modificar.
+
+Dividir la lógica permite:
+- reutilizar código
+- aislar errores
+- mejorar la claridad
+
+---
+
+## Ejemplo incorrecto
+
+
+void game_system()
+{
+// combate
+// inventario
+// guardado
+// IA
 }
 
-const int MAX_HP = 100;   // constante visible
-int playerHp = 80;        // variable
-PlayerStats stats{playerHp, 50};
-```
-
-❌ **Evitar**
-```cpp
-int Player_hp;
-int Calculate_damage();
-const int maxHp = 100;
-```
 
 ---
 
-## 4) Nombres claros (variables, funciones, structs)
+## Ejemplo correcto
 
-### Por qué existe esta regla
-El 70% del tiempo es **leer**. Si el nombre explica, tu cerebro no se desgasta.
 
-### Trasfondo
-En sistemas de juego, nombres claros reducen bugs por malentendidos.
+void combat_system();
+void inventory_system();
+void save_game();
+void enemy_ai();
 
-✅ **Esperado**
-```cpp
-int playerHP = 100;
-int damage = 25;
-int hpAfterHit = playerHP - damage;
-```
-
-❌ **Evitar**
-```cpp
-int x = 100;
-int d = 25;
-int y = x - d;
-```
 
 ---
 
-## 5) Una función = un propósito
+# 3. Evitar números mágicos
 
-### Por qué
-Si una función hace 5 cosas, cuando falla no sabes cuál.
+## Por qué existe esta regla
 
-### Trasfondo
-Modularidad = reusar lógica (inventario, combate, UI).
+Los números incrustados en el código hacen que el programa sea difícil de modificar.
 
-✅ **Esperado**
-```cpp
-int applyDamage(int hp, int damage) {
-    return hp - damage;
+Si el valor cambia, puede ser necesario buscarlo en múltiples lugares.
+
+---
+
+## Ejemplo incorrecto
+
+
+if(player_health < 20)
+
+
+---
+
+## Ejemplo correcto
+
+
+const int CRITICAL_HEALTH = 20;
+
+if(player_health < CRITICAL_HEALTH)
+
+
+---
+
+# 4. Inicializar siempre la memoria
+
+## Por qué existe esta regla
+
+Las variables no inicializadas contienen **basura de memoria**.
+
+Esto provoca comportamientos impredecibles.
+
+---
+
+## Ejemplo incorrecto
+
+
+int damage;
+cout << damage;
+
+
+---
+
+## Ejemplo correcto
+
+
+int damage = 0;
+cout << damage;
+
+
+---
+
+# 5. Manejo responsable de memoria dinámica
+
+## Por qué existe esta regla
+
+Cuando se usa `new`, el programador es responsable de liberar la memoria.
+
+No hacerlo genera **memory leaks**.
+
+---
+
+## Regla fundamental
+
+Cada `new` debe tener su correspondiente `delete`.
+
+---
+
+## Ejemplo incorrecto
+
+
+Enemy* enemy = new Enemy;
+
+
+---
+
+## Ejemplo correcto
+
+
+Enemy* enemy = new Enemy;
+
+/* uso del enemigo */
+
+delete enemy;
+
+
+---
+
+# 6. Mantener punteros seguros
+
+## Por qué existe esta regla
+
+Los punteros pueden apuntar a memoria inválida o liberada.
+
+Esto genera **errores críticos o crashes**.
+
+---
+
+## Regla
+
+Después de liberar memoria, el puntero debe ponerse en `nullptr`.
+
+---
+
+## Ejemplo
+
+
+delete enemy;
+enemy = nullptr;
+
+
+---
+
+# 7. Evitar duplicación de código
+
+## Por qué existe esta regla
+
+La duplicación multiplica los errores.
+
+Si una regla cambia, habría que modificar el mismo código en muchos lugares.
+
+---
+
+## Ejemplo incorrecto
+
+
+player_hp -= damage;
+enemy_hp -= damage;
+boss_hp -= damage;
+
+
+---
+
+## Ejemplo correcto
+
+
+void apply_damage(int &target_hp, int damage)
+{
+target_hp -= damage;
 }
-```
 
-❌ **Evitar (mezcla entrada + lógica + salida)**
-```cpp
-#include <iostream>
-
-void doEverything() {
-    int hp; std::cin >> hp;
-    int dmg; std::cin >> dmg;
-    std::cout << hp - dmg << "\n";
-}
-```
 
 ---
 
-## 6) Evita “números mágicos”
+# 8. Mantener estructuras de datos coherentes
 
-### Por qué
-`37` no significa nada. Una constante sí.
+## Por qué existe esta regla
 
-### Trasfondo
-En juegos, balancear = cambiar números. Hazlo fácil.
+Cuando se usan listas, pilas o colas, el estado de los nodos debe mantenerse consistente.
 
-✅ **Esperado**
-```cpp
-const int MAX_HP = 100;
-const int MAX_POTIONS = 5;
-```
-
-❌ **Evitar**
-```cpp
-int hp = 100; // ¿por qué 100? ¿si cambia?
-```
+Errores comunes incluyen:
+- nodos perdidos
+- referencias incorrectas
+- ciclos accidentales
 
 ---
 
-## 7) Control de flujo limpio
+## Ejemplo conceptual
 
-### Por qué
-Muchos `if` anidados vuelven el código ilegible.
+Nodo correcto:
 
-### Trasfondo
-Los juegos tienen reglas. Mantén la lógica directa.
 
-✅ **Esperado**
-```cpp
-bool canBuy(int coins, int price) {
-    if (price <= 0) return false;
-    return coins >= price;
-}
-```
+node->next = nullptr;
 
-❌ **Evitar**
-```cpp
-bool canBuy(int coins, int price) {
-    if (price > 0) {
-        if (coins >= price) return true;
-        else return false;
-    } else {
-        return false;
-    }
-}
-```
+
+Nodo incorrecto:
+
+
+node->next = node;
+
 
 ---
 
-## 8) Estructura mínima del proyecto
+# 9. Código legible antes que código “ingenioso”
 
-### Por qué
-Orden = menos tiempo perdido.
+## Por qué existe esta regla
 
-### Trasfondo
-Preparación suave para motores.
+El código excesivamente compacto puede ser difícil de entender.
 
-✅ **Esperado**
-- `main.cpp`
-- `game/` (lógica: combate, inventario, tienda)
-- `utils/` (helpers)
-- `assets/` (si hay archivos)
+En ingeniería real, la claridad siempre es preferible.
 
 ---
 
-## 9) Includes y `std::`
+## Ejemplo difícil de leer
 
-### Por qué
-`using namespace std;` puede causar colisiones.
 
-### Trasfondo
-Proyectos grandes = nombres repetidos.
+x+=y*z-a/b;
 
-✅ **Esperado**
-```cpp
-#include <iostream>
-#include <string>
-
-int main() {
-    std::string name = "Player";
-    std::cout << name << "\n";
-}
-```
-
-⚠️ **Aceptable solo en tareas muy pequeñas (pero no ideal)**
-```cpp
-using namespace std;
-```
 
 ---
 
-## 10) Comentarios que expliquen intención (no lo obvio)
+## Ejemplo claro
 
-### Por qué
-Los comentarios deben explicar “por qué”, no narrar la línea.
 
-### Trasfondo
-En juegos importa la intención (reglas y balance).
+int damage = y * z;
+int reduction = a / b;
 
-✅ **Esperado**
-```cpp
-#include <algorithm> // std::min
+x += damage - reduction;
 
-// Regla: el jugador no puede curarse por encima del HP máximo.
-hp = std::min(hp + heal, MAX_HP);
-```
-
-❌ **Evitar**
-```cpp
-// sumamos heal a hp
-hp = hp + heal;
-```
 
 ---
 
-## 11) Formato consistente (legibilidad)
+# 10. Probar el código constantemente
 
-### Por qué
-Si se ve desordenado, se entiende desordenado.
+## Por qué existe esta regla
 
-✅ **Esperado**
-- Indentación consistente
-- Llaves claras
-- Espacios alrededor de operadores
+Esperar hasta el final para probar el programa vuelve difícil encontrar errores.
+
+La práctica correcta es probar cada sistema conforme se desarrolla.
 
 ---
 
-## 12) Evita duplicación
+## Recomendación
 
-### Por qué
-Copiar/pegar lógica crea bugs repetidos.
-
-### Trasfondo
-Si arreglas un bug en un lugar y olvidas los demás, el bug “regresa”.
-
-✅ **Esperado**
-```cpp
-int clamp(int value, int minV, int maxV) {
-    if (value < minV) return minV;
-    if (value > maxV) return maxV;
-    return value;
-}
-```
-
----
-
-## 13) Usa `struct` para agrupar datos del juego
-
-### Por qué
-Variables sueltas = pierdes relación.
-
-### Trasfondo
-Esto es una puerta suave hacia diseño de sistemas (sin OO pesada aún).
-
-✅ **Esperado**
-```cpp
-#include <string>
-
-struct Player {
-    std::string name;
-    int hp;
-    int coins;
-};
-```
-
----
-
-## 14) `std::vector` para listas dinámicas (inventario, enemigos, etc.)
-
-### Por qué
-Los arreglos fijos se quedan cortos.
-
-### Trasfondo
-Inventarios, loot, quests: todo crece y se reduce.
-
-✅ **Esperado**
-```cpp
-#include <vector>
-#include <string>
-
-std::vector<std::string> inventory;
-inventory.push_back("Potion");
-inventory.push_back("Key");
-```
-
----
-
-## 15) Persistencia: guarda/carga con formato claro
-
-### Por qué
-Guardar mal genera bugs “fantasma”.
-
-### Trasfondo
-Un archivo simple necesita orden: una línea por valor o clave=valor.
-
-✅ **Esperado (clave=valor)**
-```ini
-name=Player1
-hp=85
-coins=120
-```
-
----
-
-## 16) GitHub
-
-### Por qué
-La evaluación considera proceso.
-
-### Trasfondo
-Git/GitHub ayudan a evidenciar progreso real y a recuperar versiones.
-
-✅ **Esperado**
-- Commits pequeños y con mensaje útil (ES o EN según equipo)
-- README breve (ES o EN según empresa)
-- Repo ordenado
-
-❌ **Evitar**
-- 1 commit: `final final ahora si`
-- Sin README
-- Subir basura (builds, `.exe`, etc.)
+- probar funciones individualmente
+- probar estructuras con casos simples
+- verificar memoria liberada correctamente

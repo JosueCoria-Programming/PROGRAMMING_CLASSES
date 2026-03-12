@@ -1,123 +1,100 @@
-# TEMARIO — INTRODUCCIÓN A LA PROGRAMACIÓN (C++)
-**Institución:**   
-**Profesor:** Josue Coria  
-**Duración:**
+# TEMARIO — PROGRAMACIÓN ESTRUCTURADA (C++)
+**Institución:**  
+**Profesor:**  
+**Duración:** 4 meses  
 **Lenguaje:** C++ (Consola)
 
 ---
 
-## Parte 1 — Fundamentos de programación (Parcial 1)
+# Parte 1 — Manipulación de memoria y estructuras (Parcial 1)
 
-### 1) ¿Qué es programar?
-- Concepto de programa
-- Flujo básico: escribir → compilar → ejecutar
-- Salida en consola (`cout`)
-- Uso de comentarios
-- Primer contacto con C++
+## 1) Structs avanzados
+- Repaso rápido de `struct`
+- Uso de `typedef`
+- Structs anidados
+- Structs con arreglos y vectores
+- Modelado de entidades de juego
 
-### 2) Variables, tipos y operaciones
-- Variables y constantes
-- Tipos de datos básicos (`int`, `double`, `bool`, `string`)
-- Operaciones aritméticas
-- Actualización de variables
-- Uso de variables para estados de juego (HP, coins, score)
+## 2) Funciones avanzadas
+- Revisión de funciones
+- Paso por referencia
+- Funciones que modifican estructuras
+- Funciones que retornan estructuras
+- Diseño de funciones para sistemas de juego
 
-### 3) Entrada y salida
-- Entrada con `cin`
-- Relación entrada → lógica → salida
-- Lectura de valores numéricos
-- Lectura básica de texto
-- Reportes simples en consola
+## 3) Apuntadores
+- Concepto de dirección de memoria
+- Declaración de apuntadores
+- Operador `*` y operador `&`
+- Uso de apuntadores en structs
+- Funciones que usan apuntadores
 
-### 4) Condicionales
-- `if`
-- `if / else`
-- `else if`
-- Condiciones booleanas
-- Decisiones de juego (vida, compra, desbloqueo)
+## 4) Recursividad
+- Concepto de recursividad
+- Caso base y caso recursivo
+- Recursividad vs iteración
+- Aplicaciones en lógica de juego
 
-### 5) Switch + menús
-- Estructura `switch`
-- Casos y `default`
-- Menús de una sola interacción
-- Menús de juego en consola
-- Selección de opciones del jugador
+## 5) Algoritmos de ordenamiento y búsqueda
+- Concepto de ordenamiento
+- Comparación entre algoritmos
+- Complejidad básica de algoritmos
 
-### 6) Ciclos (`while`)
-- Repetición controlada
-- Contadores y acumuladores
-- Menús repetibles
-- Loops simples de juego
-- Condiciones de salida
+Métodos de ordenamiento:
+- Método de burbuja (Bubble Sort)
+- Método de selección (Selection Sort)
+- Método de inserción (Insertion Sort)
+- Método de Shell (Shell Sort)
+- QuickSort
 
-### 7) Ciclos (`for`) + patrones comunes
-- Ciclos con contador
-- Sumas, promedios y máximos
-- Conteos por iteración
-- Tablas y secuencias
-- Patrones comunes en lógica de juego
+Métodos de búsqueda:
+- Búsqueda lineal
+- Búsqueda en estructuras de datos
 
-### 8) Funciones (bases)
-- Declaración de funciones
-- Parámetros
-- Retorno de valores
-- Funciones `void`
-- Separación de responsabilidades
-- Funciones para sistemas de juego
+Aplicaciones:
+- Ordenar inventarios
+- Ordenar puntuaciones (leaderboards)
+- Buscar entidades de juego
 
 ---
 
 ## Parcial 1
-**Súper desafío:** *Console Game Core*
+**Súper desafío:**  
+Sistema de gestión de entidades de juego usando structs, funciones y apuntadores.
 
 ---
 
-## Parte 2 — Estructuras, datos y persistencia (Parcial 2)
+# Parte 2 — Estructuras de datos dinámicas (Parcial 2)
 
-### 9) Arreglos (arrays 1D)
-- Declaración de arrays
-- Acceso por índice
-- Recorrido con ciclos
-- Cálculos sobre arrays
-- Listas fijas (scores, daños)
+## 6) Listas enlazadas
+- Concepto de nodo
+- Creación de listas
+- Inserción
+- Eliminación
+- Recorrido de listas
+- Uso en sistemas de juego
 
-### 10) Vectores (`std::vector`)
-- Vectores dinámicos
-- `push_back`, `pop_back`, `size`
-- Recorrido de vectores
-- Inventarios dinámicos
-- Listas variables de datos
+## 7) Pilas
+- Concepto LIFO
+- Implementación con listas
+- Operaciones push y pop
+- Aplicaciones en videojuegos (historial, undo)
 
-### 11) Strings (más a fondo)
-- Uso de `std::string`
-- Longitud y concatenación
-- Comparación de strings
-- `find` y `substr`
-- `getline` para lectura completa
-- Comandos y diálogos de texto
+## 8) Colas
+- Concepto FIFO
+- Implementación con listas
+- Operaciones enqueue y dequeue
+- Sistemas de turnos en juego
 
-### 12) Estructuras (`struct`)
-- Definición de `struct`
-- Agrupación de datos relacionados
-- Uso de structs para entidades de juego
-- `struct` + `vector`
-- Manipulación y actualización de datos
-
-### 13) Archivos (persistencia básica)
-- Concepto de persistencia
-- Escritura con `ofstream`
-- Lectura con `ifstream`
-- Formatos simples de archivo
-- Guardado y carga de datos de juego
-
-### 14) Depuración y calidad
-- Identificación de errores lógicos
-- Uso de mensajes de depuración
-- Pruebas manuales
-- Refactorización básica
-- Mejora de legibilidad y estructura
+## 9) Grafos
+- Concepto de nodo y arista
+- Representación de grafos
+- Recorrido básico
+- Aplicaciones en mapas de videojuegos
+- Sistemas de navegación simples
 
 ---
 
 ## Parcial 2
-**Súper desafío:** *Console Game Extended*
+**Súper desafío:**  
+Sistema de navegación de mapa usando grafos.

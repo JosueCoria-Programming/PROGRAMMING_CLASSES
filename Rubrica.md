@@ -1,5 +1,5 @@
 # RÚBRICA DE EVALUACIÓN
-## INTRODUCCIÓN A LA PROGRAMACIÓN (C++)
+## PROGRAMACIÓN ESTRUCTURADA (C++)
 
 ---
 
@@ -9,7 +9,7 @@
 Josue Coria
 
 ### 📘 Materia
-INTRODUCCIÓN A LA PROGRAMACIÓN
+PROGRAMACIÓN ESTRUCTURADA
 
 ### 🖥️ Lenguaje
 C++ (Consola)
@@ -18,15 +18,19 @@ C++ (Consola)
 
 ## 🎯 Finalidad de la materia
 
-La finalidad de esta materia es introducir al estudiante a los fundamentos de la programación estructurada utilizando **C++ en consola**, desarrollando pensamiento lógico, capacidad de análisis y resolución de problemas mediante la construcción de **sistemas concretos de videojuegos**.
+La finalidad de esta materia es desarrollar en el estudiante la capacidad de **construir sistemas de software más complejos** mediante el uso de **programación estructurada en C++**, incorporando manejo explícito de memoria, estructuras de datos dinámicas y algoritmos fundamentales.
 
-El curso prioriza:
-- Comprensión del proceso de programación
-- Escritura de código claro y funcional
-- Aplicación de buenas prácticas desde etapas tempranas
-- Capacidad de explicar, defender y modificar el propio código
+Durante el curso el estudiante aprenderá a:
 
-La evaluación considera **tanto el resultado final como el proceso de desarrollo**.
+- Modelar entidades y sistemas utilizando estructuras de datos
+- Manipular memoria mediante apuntadores
+- Implementar algoritmos clásicos de ordenamiento y búsqueda
+- Construir estructuras dinámicas como listas, pilas y colas
+- Representar relaciones complejas mediante grafos
+
+Todos los ejercicios, proyectos y evaluaciones están orientados a la construcción de **sistemas de videojuegos en consola**, reforzando la conexión entre teoría de estructuras de datos y aplicaciones reales.
+
+La evaluación considera **tanto el resultado final como el proceso de desarrollo y comprensión del código**.
 
 ---
 
@@ -44,114 +48,132 @@ La evaluación considera **tanto el resultado final como el proceso de desarroll
 
 ---
 
-### 1️⃣ Lógica y funcionamiento (30%)
+## 1️⃣ Lógica y funcionamiento (30%)
 
 Evalúa si el programa:
-- Cumple con los requisitos del sistema de videojuego solicitado
-- Funciona correctamente en distintos escenarios
-- Aplica correctamente condiciones, ciclos y funciones
-- Mantiene coherencia en el flujo del juego
+
+- Cumple correctamente con los requisitos del sistema solicitado
+- Implementa correctamente estructuras de datos y algoritmos
+- Maneja adecuadamente memoria y apuntadores
+- Produce resultados correctos en diferentes escenarios
+- Mantiene coherencia en el flujo del sistema
 
 ---
 
-### 2️⃣ Estructura del código (20%)
+## 2️⃣ Estructura del código (20%)
 
 Evalúa:
-- Separación adecuada de responsabilidades
-- Uso correcto de funciones
-- Orden lógico del código
-- Evitar duplicación innecesaria de lógica
-- Organización general del archivo `.cpp`
+
+- Uso adecuado de funciones para modularizar el programa
+- Separación clara de responsabilidades
+- Implementación correcta de estructuras de datos
+- Organización lógica del código
+- Ausencia de duplicación innecesaria de lógica
 
 ---
 
-### 3️⃣ Buenas prácticas de programación (20%)
+## 3️⃣ Buenas prácticas de programación (20%)
 
 Evalúa:
-- Uso correcto de nombres de variables y funciones en **inglés**
-- Convenciones de nombres (`snake_case`, `camelCase`, `PascalCase`) de forma consistente
-- Evitar “números mágicos”
+
+- Nombres claros de variables, funciones y estructuras
+- Convenciones consistentes de nombres
 - Uso adecuado de constantes
-- Código mantenible y entendible
+- Evitar valores mágicos
+- Código mantenible y escalable
 
 ---
 
-### 4️⃣ Claridad y legibilidad (15%)
+## 4️⃣ Claridad y legibilidad (15%)
 
 Evalúa:
-- Código fácil de leer
+
 - Identación correcta
-- Espacios y formato consistente
-- Uso adecuado de comentarios cuando es necesario
-- Evitar código confuso o innecesariamente complejo
+- Código ordenado y fácil de seguir
+- Uso adecuado de espacios y formato
+- Comentarios claros cuando el código lo requiere
+- Evitar lógica innecesariamente compleja
 
 ---
 
-### 5️⃣ Documentación (10%)
+## 5️⃣ Documentación (10%)
 
 Evalúa:
-- Explicación general del programa (README o comentarios iniciales)
-- Descripción breve de qué hace cada sistema principal
+
+- Explicación general del programa
+- Descripción del propósito de cada sistema principal
+- Explicación de estructuras de datos implementadas
 - Capacidad del estudiante para explicar su código de forma oral o escrita
-- Claridad en el propósito del programa
 
-> La documentación puede estar en **español**, dependiendo del contexto de empresa o proyecto.
+> La documentación puede estar en **español**, dependiendo del contexto académico o profesional.
 
 ---
 
-### 6️⃣ Uso de GitHub (5%)
+## 6️⃣ Uso de GitHub (5%)
 
 Evalúa:
+
 - Repositorio creado correctamente
 - Código subido y funcional
-- Commits coherentes (no un solo commit final)
-- Uso básico del control de versiones
+- Commits coherentes durante el desarrollo
+- Uso básico de control de versiones
 
 ---
 
-## 🏅 Escala de desempeño
+# 🏅 Escala de desempeño
 
-### Excelente (90–100)
-- Código claro, bien estructurado y funcional
-- Cumple todos los criterios
-- Aplica consistentemente buenas prácticas
-- El estudiante demuestra comprensión total del sistema
+## Excelente (90–100)
 
-### Bueno (70–89)
-- Cumple los requisitos funcionales
+- Código claro, bien estructurado y completamente funcional
+- Implementación correcta de estructuras de datos y algoritmos
+- Aplicación consistente de buenas prácticas
+- El estudiante demuestra dominio del sistema implementado
+
+---
+
+## Bueno (70–89)
+
+- El sistema funciona correctamente
 - Presenta estructura adecuada
-- Existen áreas claras de mejora, pero el sistema es correcto
-
-### Suficiente (60–79)
-- El programa funciona
-- Presenta deficiencias importantes en estructura, claridad o buenas prácticas
-- Requiere guía para mejorar
-
-### Insuficiente (<60)
-- No cumple los requisitos mínimos
-- Código incompleto, incorrecto o ilegible
-- No se demuestra comprensión del trabajo entregado
+- Existen áreas de mejora en claridad, modularidad o buenas prácticas
 
 ---
 
-## ⚠️ Notas importantes
+## Suficiente (60–79)
 
-- Un programa que **funciona pero no sigue buenas prácticas** no puede obtener calificación máxima.
+- El programa cumple parcialmente los requisitos
+- Existen problemas importantes de organización o claridad
+- Requiere guía para mejorar su estructura
+
+---
+
+## Insuficiente (<60)
+
+- El sistema no cumple los requisitos mínimos
+- Implementación incorrecta de estructuras o algoritmos
+- Código incompleto o difícil de comprender
+
+---
+
+# ⚠️ Notas importantes
+
+- Un programa que **funciona pero no sigue buenas prácticas** no puede obtener la calificación máxima.
 - El **plagio**, reutilización de código sin comprensión o entrega de código no explicado implica **calificación no aprobatoria**.
-- La evaluación considera **el resultado y el proceso**.
+- La evaluación considera **tanto el resultado final como el proceso de desarrollo**.
 - Cuando existan dudas razonables sobre:
-    - autoría,
-    - comprensión,
-    - o dominio del código,
+  - autoría
+  - comprensión
+  - dominio del código
 
-  el estudiante deberá **explicar, defender y realizar ajustes al código durante una revisión guiada** para demostrar comprensión real.
+  el estudiante deberá **explicar, defender y modificar su código durante una revisión guiada** para demostrar comprensión real.
 
 ---
 
-## 🎮 Enfoque de evaluación
+# 🎮 Enfoque de evaluación
 
 Todos los proyectos, desafíos y súper desafíos evaluados:
+
 - Representan **sistemas concretos de videojuegos**
-- Se desarrollan en **consola**
+- Se desarrollan en **C++ en consola**
 - Reflejan el nivel real del curso
 - No requieren conocimientos no vistos en clase
